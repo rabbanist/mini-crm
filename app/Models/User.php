@@ -4,21 +4,15 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-<<<<<<< HEAD
-=======
 use Illuminate\Database\Eloquent\SoftDeletes;
->>>>>>> 5e6e33e (user curd done with soft delete)
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-<<<<<<< HEAD
-    use HasFactory, Notifiable;
-=======
-    use HasFactory, Notifiable, SoftDeletes;
->>>>>>> 5e6e33e (user curd done with soft delete)
+    use HasFactory, Notifiable, SoftDeletes, HasRoles;
 
     /**
      * The attributes that are mass assignable.

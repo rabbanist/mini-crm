@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+=======
+use App\Http\Requests\UserUpdateRequest;
+>>>>>>> 5e6e33e (user curd done with soft delete)
 use App\Models\user;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserStoreRequest;
@@ -35,6 +39,7 @@ class UserController extends Controller
     }
 
     /**
+<<<<<<< HEAD
      * Display the specified resource.
      */
     public function show(user $user)
@@ -43,19 +48,32 @@ class UserController extends Controller
     }
 
     /**
+=======
+>>>>>>> 5e6e33e (user curd done with soft delete)
      * Show the form for editing the specified resource.
      */
     public function edit(user $user)
     {
+<<<<<<< HEAD
         //
+=======
+        return view('user.edit', compact('user'));
+>>>>>>> 5e6e33e (user curd done with soft delete)
     }
 
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
     public function update(Request $request, user $user)
     {
         //
+=======
+    public function update(UserUpdateRequest $request, user $user)
+    {
+        $user->update($request->validated());
+        return redirect()->route('users.index');
+>>>>>>> 5e6e33e (user curd done with soft delete)
     }
 
     /**
@@ -63,6 +81,11 @@ class UserController extends Controller
      */
     public function destroy(user $user)
     {
+<<<<<<< HEAD
         //
+=======
+        $user->delete();
+        return redirect()->route('users.index');
+>>>>>>> 5e6e33e (user curd done with soft delete)
     }
 }

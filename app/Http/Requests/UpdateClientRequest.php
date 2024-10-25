@@ -24,7 +24,7 @@ class UpdateClientRequest extends FormRequest
     {
         return [
             'contact_name' => 'required|string',
-            'contact_email' => 'required|email|max:255',Rule::unique('clients')->ignore($this->client),
+            'contact_email' => 'required|email|max:255|unique:clients',
             'contact_phone' => 'required|string',
             'company_name' => 'required|string',
             'company_address' => 'required|string',

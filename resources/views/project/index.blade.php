@@ -64,6 +64,8 @@
                                                 <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                                                     <a href="{{route('projects.edit',$project)}}"
                                                        class="text-indigo-600 hover:text-indigo-900">Edit</a>
+
+                                                    @can(\App\Enums\PermissionEnum::DELETE_PROJECTS->value)
                                                     |
                                                     <form method="POST"
                                                           class="inline-block"
@@ -75,6 +77,7 @@
                                                             Delete
                                                         </button>
                                                     </form>
+                                                    @endcan
                                                 </td>
                                             </tr>
                                         @endforeach

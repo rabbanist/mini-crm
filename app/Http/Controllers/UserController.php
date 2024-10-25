@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\user;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserStoreRequest;
 
